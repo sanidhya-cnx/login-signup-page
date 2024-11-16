@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Geist Mono", serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(to right, #F3F3E0 ,#F3F3E0);
+}
+
+.container{
+    width: 768px;
+    min-height: 480px;
+    border-radius: 150px;
+    overflow: hidden;
+    position: relative;
+    background-color: #CBDCEB;
+    box-shadow: 0 5px 18px #333;
+}
+
+.container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #CBDCEB;
+    height: 100%;
+}
+
+.container h1{
+    padding: 15px 0;
+}
+
+.container span{
+    padding: 12px 0;
+}
+
+.container input{
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    margin: 10px 0;
+    outline: none;
+    padding:  5px;
+}
+
+.container a{
+    color: #333;
+    text-decoration: none;
+}
+
+.container button{
+    margin: 15px 0;
+    padding: 10px 35px;
+    border-radius: 12px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+    background-color: #4275cc;
+    color: white;
+}
+
+.sign-up, .sign-in{
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.sign-up{
+    width: 50%;
+    /* border: 1px solid black; */
+    transition: all 0.6s ease-in-out;
+    z-index: 1;
+}
+
+.sign-in{
+    z-index: 0;
+    width: 50%;
+    transform: translateX(200%);
+    transition: all 0.6s ease-in-out;
+    /* border: 1px solid black; */
+}
+
+.container.active .sign-in{
+    transform: translateX(100%);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .sign-up{
+    transform: translateX(-100%);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-container{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    border-radius: 150px;
+    overflow: hidden;
+    height: 100%;
+    background: linear-gradient(to right, #4275cc, #133E87);
+    width: 50%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle-container{
+    transform: translateX(-100%);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle{
+    height: 100%;
+    position: relative;
+    left: -100%;
+    width: 200%;
+    transform: translateX(0);
+    z-index: 10;
+}
+
+.toggle-pannel{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    color: white;
+}
+
+.toggle-right{
+    z-index: 3;
+    transform: translateX(100%);
+    z-index: 1000;
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle-right{
+    z-index: 5;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left{
+    z-index: 3;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+    z-index: 1000;
+}
+
+.container.active .toggle-left{
+    z-index: 5;
+    transform: translateX(100%);
+    transition: all 0.6s ease-in-out;
+}
+
+button.hidden{
+    background-color: white;!important
+    border: 1px solid #eee;
+    color:black;
+}
